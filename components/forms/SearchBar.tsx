@@ -1,5 +1,4 @@
 "use client"
-
 interface Props{
     search: string;
     setSearch: (text:string) => void
