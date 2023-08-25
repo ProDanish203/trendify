@@ -1,6 +1,7 @@
 import { Feed, Hero } from "@/components/shared";
 
-export default function Home() {
+const Home = async() => {
+
   return (
     <main>
       <Hero/>
@@ -8,3 +9,5 @@ export default function Home() {
     </main>
   )
 }
+
+export default Home;

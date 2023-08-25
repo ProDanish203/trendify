@@ -12,7 +12,6 @@ export const Header = () => {
   const {data: session} = useSession();
   const [providers, setProviders] = useState(null)
   const [toggleDd, setToggleDd] = useState(false);
-  console.log(session)
   useEffect(() => {
     const configureProviders = async () => {
       const res = await getProviders();
@@ -40,7 +39,8 @@ export const Header = () => {
         <button className='text-bg bg-primary px-3 py-2 rounded-full'>Create Post</button>
       </Link>
       <button className='hover:text-bg hover:bg-primary border border-primary px-3 py-2 rounded-full' onClick={() => signOut()}>Sign Out</button>
-      <Link href="/profile" className="relative w-12 h-12 max-md:w-10 max-md:h-10 object-cover rounded-full">
+      {/* @ts-ignore */}
+      <Link href={`/profile/${session?.user?.id}`} className="relative w-12 h-12 max-md:w-10 max-md:h-10 object-cover rounded-full">
         <Image src={session?.user?.image} fill alt="Profile" className="rounded-full obect-cover"/>
       </Link>
       </>

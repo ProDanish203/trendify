@@ -13,7 +13,6 @@ export const CreateForm = () => {
   const [loading, setLoading] = useState(false);
 
   const {data: session} = useSession();
-  console.log(session)
   const path = usePathname();
   const {push} = useRouter();
 

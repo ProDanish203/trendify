@@ -11,10 +11,16 @@ const UserSchema = new Schema({
         unique: [true, "Email already in use"]
     },
     image: String,
+    prompts:[
+        {
+            type: Schema.Types.ObjectId,
+            ref: "Prompt"
+        },
+    ],
     createdAt: {
         type: Date,
         default: Date.now()
-    }
+    },
 })
 
 
